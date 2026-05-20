@@ -118,10 +118,17 @@ export function Lightbox({ project, projects, onClose, onNavigate }: Props) {
             <Row label="Etiketler" value={project.tags.join(", ")} />
           </dl>
 
-          <p className="mt-8 text-xs text-muted leading-relaxed">
-            Bu proje hakkında ayrıntılı bilgi, görsel galerisi ve süreç hikayesi
-            için iletişime geçin. Benzer projeler portfolyo bölümünde.
+          <p className="mt-8 text-sm text-cream/80 leading-relaxed">
+            {project.summary ?? "Bu proje hakkında ayrıntılı bilgi, görsel galerisi ve süreç hikayesi için detay sayfasını ziyaret edin."}
           </p>
+
+          <a
+            href={`/projeler/${project.slug}`}
+            className="mt-6 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-accent text-ink font-medium hover:bg-accent-2 transition-colors text-sm"
+          >
+            Proje detayını gör
+            <span aria-hidden>→</span>
+          </a>
 
           <div className="mt-auto pt-8 flex items-center justify-between text-xs text-muted">
             <span>{index + 1} / {projects.length}</span>
