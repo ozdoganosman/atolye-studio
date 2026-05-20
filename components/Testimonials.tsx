@@ -3,10 +3,10 @@ import { Reveal } from "./Reveal";
 const testimonials = [
   {
     quote:
-      "İlk eskizden anahtar teslime kadar tek bir ekiple çalışmak işimizi inanılmaz hızlandırdı. Üretim aşamasında haftalık fotoğraflı raporlar gelmesi bizi sahaya gitmek zorunda bırakmadı.",
-    name: "Mert K.",
-    title: "Operasyon Direktörü",
-    company: "Lumen Lighting"
+      "Markanın global standartlarını koruyacak ama hızlı kurulup açılacak bir mağazaya ihtiyacımız vardı. Atölye, 7 haftalık takvime tek günlük sapma olmadan teslim etti.",
+    name: "B. K.",
+    title: "Operasyon Müdürü",
+    company: "Pierre Cardin Türkiye"
   },
   {
     quote:
@@ -25,14 +25,14 @@ const testimonials = [
 ];
 
 const logos = [
-  "LUMEN",
-  "TEXINTRO",
+  "PIERRE CARDIN",
+  "BOYNER GRUP",
   "ATRIUM",
+  "TEXINTRO",
   "VECTOR",
   "YUMI",
-  "NORTHWAVE",
-  "MARINA",
-  "EXPO"
+  "LUMEN",
+  "NORTHWAVE"
 ];
 
 export function Testimonials() {

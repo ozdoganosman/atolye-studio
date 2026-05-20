@@ -23,6 +23,74 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "pierre-cardin-magaza",
+    title: "Pierre Cardin Konsept Mağazası",
+    category: "İç Mimari",
+    client: "Pierre Cardin",
+    location: "İstanbul",
+    year: 2025,
+    image: "/portfolio/pierre-cardin-1.jpg",
+    span: "wide",
+    tags: ["Tekstil", "Premium perakende"],
+    area: "240 m²",
+    duration: "7 hafta",
+    services: [
+      "Konsept tasarım",
+      "3D görselleştirme",
+      "Metal teşhir sistemleri",
+      "Aydınlatma tasarımı",
+      "Anahtar teslim kurulum"
+    ],
+    summary:
+      "Pierre Cardin için sıcak nötr renk paleti, açık ahşap raflar ve siyah metal karkasla kurgulanan konsept mağaza.",
+    brief:
+      "Marka, dünya genelindeki mağaza standardını koruyacak ama lokal kullanıcı alışkanlıklarına uyacak bir mağaza istedi. Tekstil kategorisi geniş olduğundan teşhir sisteminin esnekliği ve aydınlatmanın renk seçimine olan etkisi belirleyici kriterler oldu.",
+    approach:
+      "Karkas siyah metal, raflar bir tonu açık doğal ahşap — kategori değişikliklerinde nötr durabilen klasik bir kombinasyon. Marka levhasının arkasına aktif LED ışık paneli yerleştirildi; vitrine yansıyan ışık camda ikinci bir vitrin etkisi yaratıyor.",
+    gallery: [
+      "/portfolio/pierre-cardin-1.jpg",
+      "/portfolio/pierre-cardin-3.jpg",
+      "/portfolio/pierre-cardin-4.jpg",
+      "/portfolio/slatwall-1.jpg"
+    ],
+    testimonial: {
+      quote:
+        "Markanın global standartlarını koruyacak ama hızlı kurulup açılacak bir mağazaya ihtiyacımız vardı. Atölye, 7 haftalık takvime tek günlük sapma olmadan teslim etti.",
+      name: "B. K.",
+      role: "Operasyon Müdürü, Pierre Cardin Türkiye"
+    }
+  },
+  {
+    slug: "boyner-magaza-kurulum",
+    title: "Büyük Perakende Mağaza Kurulumu",
+    category: "İç Mimari",
+    client: "Boyner Grup",
+    location: "İstanbul",
+    year: 2025,
+    image: "/portfolio/boyner-display-final.jpg",
+    span: "tall",
+    tags: ["Perakende", "Mağaza kurulum"],
+    area: "1.200 m²",
+    duration: "10 hafta",
+    services: [
+      "Teşhir sistemi üretimi",
+      "Metal raf konstrüksiyonu",
+      "Saha kurulum & koordinasyon",
+      "Aydınlatma & sinyalizasyon"
+    ],
+    summary:
+      "Yüksek hacimli perakende mağazada modüler metal raf sistemleri ve full teşhir kurulumu.",
+    brief:
+      "Marka, AVM içindeki yeni mağazasının 1.200 m²'lik alanını sıfırdan teslim alacak; raf, podyum, vitrin sinyalizasyonu — tek elden kurulacaktı.",
+    approach:
+      "Tek tip ana modül üretip varyantlar türettik. 600+ metre raf konstrüksiyonu atölyede önceden parçalara ayrılıp etiketlendi; sahada ortalama 35 dakikada bir modül kurulacak şekilde planlandı. Yedek parçalar mağazaya teslim aşamasında bırakıldı.",
+    gallery: [
+      "/portfolio/boyner-display-final.jpg",
+      "/portfolio/boyner-display-construction.jpg",
+      "/portfolio/slatwall-1.jpg"
+    ]
+  },
+  {
     slug: "dogal-market",
     title: "Doğal Ürünler Mağazası",
     category: "İç Mimari",
@@ -156,7 +224,9 @@ export const projects: Project[] = [
     gallery: [
       "/process/step-4-display.jpg",
       "/process/step-2-display.jpg",
-      "/process/step-2-store.jpg"
+      "/portfolio/cabinet-tech-drawing.jpg",
+      "/portfolio/vitrin-tech-drawing.jpg",
+      "/portfolio/slatwall-1.jpg"
     ]
   },
   {
@@ -181,7 +251,8 @@ export const projects: Project[] = [
     gallery: [
       "/process/step-3-frame.jpg",
       "/process/step-3-metal.jpg",
-      "/process/step-3-grinding.webp"
+      "/process/step-3-grinding.webp",
+      "/portfolio/modular-tech-drawing.jpg"
     ]
   },
   {
@@ -226,7 +297,8 @@ export const projects: Project[] = [
       "Container ölçülerine sığacak şekilde kurgulanmış prefabrik panel sistemi tasarladık. Mutfak ve müşteri alanı tek bir modül; iki ayrı kullanım. 1 gün içinde kuruluyor, 4 saat içinde sökülüyor.",
     gallery: [
       "/process/step-2-cafe.jpg",
-      "/process/step-2-grill.jpg"
+      "/process/step-2-grill.jpg",
+      "/portfolio/product-wood-lamp.jpg"
     ]
   }
 ];

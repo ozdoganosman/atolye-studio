@@ -208,6 +208,51 @@ export default function HakkimizdaPage() {
         </div>
       </section>
 
+      <section className="py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-8 items-end mb-12 lg:mb-16">
+            <div className="lg:col-span-7">
+              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">
+                Atölyeden
+              </p>
+              <h2 className="font-display text-3xl lg:text-5xl leading-[1.05]">
+                Üretim hattından{" "}
+                <span className="italic text-cream/60">an'lar.</span>
+              </h2>
+            </div>
+            <p className="lg:col-span-5 text-cream/70 leading-relaxed">
+              Tasarımı çizenler, üretimi yapanlar, sahada kuranlar — hepsi
+              aynı çatı altında. Bu, web sitesinde gördüğünüz mağazaların
+              kurulduğu yer.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-12 gap-3 lg:gap-4">
+            {[
+              { src: "/workshop/counter-build.jpg", span: "col-span-6 lg:col-span-5 aspect-[4/5]", alt: "Atölyede beyaz tezgah üretimi" },
+              { src: "/process/step-3-frame.jpg", span: "col-span-6 lg:col-span-4 aspect-[4/5]", alt: "Metal konstrüksiyon iskeleti" },
+              { src: "/workshop/cabinet-build.jpg", span: "col-span-12 lg:col-span-3 aspect-[4/5]", alt: "Kasa üretim aşaması" },
+              { src: "/process/step-3-grinding.webp", span: "col-span-6 lg:col-span-4 aspect-[4/3]", alt: "Metal işleme ve taşlama" },
+              { src: "/portfolio/boyner-display-construction.jpg", span: "col-span-6 lg:col-span-4 aspect-[4/3]", alt: "Sahada metal stand kurulumu" },
+              { src: "/process/step-3-metal.jpg", span: "col-span-12 lg:col-span-4 aspect-[4/3]", alt: "Atölyede özel metal şekillendirme" }
+            ].map((img) => (
+              <div
+                key={img.src}
+                className={`${img.span} relative rounded-2xl overflow-hidden bg-surface border border-border group`}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 lg:py-32 bg-ink-2 border-y border-border">
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">
