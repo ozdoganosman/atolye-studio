@@ -84,14 +84,20 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="hidden lg:block absolute -left-16 top-12 w-44 aspect-square rounded-2xl overflow-hidden border-4 border-ink shadow-2xl rotate-[-4deg]">
-            <Image
-              src="/process/step-2-store.jpg"
-              alt="Konsept aşaması 3D render"
-              fill
-              sizes="200px"
-              className="object-cover"
+          <div className="hidden lg:block absolute -left-16 top-12 w-48 aspect-[4/5] rounded-2xl overflow-hidden border-4 border-ink shadow-2xl rotate-[-4deg]">
+            <video
+              src="/hero/atelier.mp4"
+              poster="/process/step-2-store.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
             />
+            <span className="absolute bottom-2 left-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-ink/80 backdrop-blur text-[10px] text-cream">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              Atölyeden
+            </span>
           </div>
 
           <div className="hidden lg:flex absolute -right-4 -bottom-6 items-center gap-3 px-4 py-3 rounded-full bg-ink border border-border shadow-2xl">

@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
-import { projects, type Category } from "@/lib/projects";
+import { projects, type Category, type Project } from "@/lib/projects";
+import { Lightbox } from "./Lightbox";
 
 const categories: Category[] = ["Hepsi", "İç Mimari", "Fuar & Stand"];
 
 export function Portfolio() {
   const [active, setActive] = useState<Category>("Hepsi");
+  const [open, setOpen] = useState<Project | null>(null);
 
   const filtered = useMemo(
     () => (active === "Hepsi" ? projects : projects.filter((p) => p.category === active)),
@@ -49,10 +51,11 @@ export function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 auto-rows-[320px] lg:auto-rows-[380px]">
           {filtered.map((p, i) => (
-            <a
+            <button
               key={p.slug}
-              href="#"
-              className={`group relative overflow-hidden rounded-2xl bg-surface border border-border hover-tilt ${
+              type="button"
+              onClick={() => setOpen(p)}
+              className={`group relative overflow-hidden rounded-2xl bg-surface border border-border hover-tilt text-left ${
                 p.span === "wide" ? "md:col-span-2" : ""
               } ${p.span === "tall" ? "lg:row-span-2" : ""}`}
               style={{
@@ -101,20 +104,27 @@ export function Portfolio() {
                   →
                 </span>
               </div>
-            </a>
+            </button>
           ))}
         </div>
 
         <div className="mt-12 flex items-center justify-center">
           <a
-            href="#"
+            href="#iletisim"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-cream/80 hover:border-cream/50 hover:text-cream transition-colors text-sm"
           >
-            Tüm projeleri gör
+            Benzer bir proje görüşmek isterim
             <span aria-hidden>→</span>
           </a>
         </div>
       </div>
+
+      <Lightbox
+        project={open}
+        projects={filtered}
+        onClose={() => setOpen(null)}
+        onNavigate={setOpen}
+      />
     </section>
   );
 }

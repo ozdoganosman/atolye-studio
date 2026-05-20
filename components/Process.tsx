@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Reveal } from "./Reveal";
+import { StepIndicator } from "./StepIndicator";
 
 const steps = [
   {
@@ -75,16 +76,22 @@ export function Process() {
           </Reveal>
         </div>
 
-        <ol className="space-y-16 lg:space-y-28">
-          {steps.map((s, i) => {
-            const reverse = i % 2 === 1;
-            return (
-              <Reveal
-                key={s.n}
-                as="li"
-                delay={i * 60}
-                className="relative grid lg:grid-cols-12 gap-8 lg:gap-12 items-center"
-              >
+        <div className="grid lg:grid-cols-[200px_1fr] gap-12 items-start">
+          <StepIndicator
+            steps={steps.map((s) => ({ id: `step-${s.n}`, label: s.tag }))}
+          />
+
+          <ol className="space-y-16 lg:space-y-28 min-w-0">
+            {steps.map((s, i) => {
+              const reverse = i % 2 === 1;
+              return (
+                <Reveal
+                  key={s.n}
+                  as="li"
+                  id={`step-${s.n}`}
+                  delay={i * 60}
+                  className="relative grid lg:grid-cols-12 gap-8 lg:gap-12 items-center scroll-mt-32"
+                >
                 <div
                   className={`lg:col-span-6 ${
                     reverse ? "lg:order-2" : ""
@@ -147,7 +154,8 @@ export function Process() {
               </Reveal>
             );
           })}
-        </ol>
+          </ol>
+        </div>
 
         <Reveal className="mt-20 lg:mt-28 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 p-8 rounded-3xl bg-surface border border-border">
           <div>

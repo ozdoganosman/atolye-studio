@@ -7,9 +7,10 @@ type Props = {
   className?: string;
   delay?: number;
   as?: "div" | "section" | "li" | "article" | "header";
+  id?: string;
 };
 
-export function Reveal({ children, className = "", delay = 0, as = "div" }: Props) {
+export function Reveal({ children, className = "", delay = 0, as = "div", id }: Props) {
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(false);
 
@@ -33,6 +34,7 @@ export function Reveal({ children, className = "", delay = 0, as = "div" }: Prop
   return (
     <Tag
       ref={ref as React.RefObject<HTMLElement>}
+      id={id}
       className={`reveal ${shown ? "in" : ""} ${className}`}
     >
       {children}
