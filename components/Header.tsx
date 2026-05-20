@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#sureç", label: "Süreç" },
-  { href: "#hizmetler", label: "Hizmetler" },
-  { href: "#portfolyo", label: "Portfolyo" },
-  { href: "#iletisim", label: "İletişim" }
+  { href: "/#sureç", label: "Süreç" },
+  { href: "/#hizmetler", label: "Hizmetler" },
+  { href: "/#portfolyo", label: "Portfolyo" },
+  { href: "/#sss", label: "SSS" },
+  { href: "/#iletisim", label: "İletişim" }
 ];
 
 export function Header() {
@@ -51,10 +52,10 @@ export function Header() {
         </nav>
 
         <a
-          href="#iletisim"
+          href="/brief"
           className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream text-ink text-sm font-medium hover:bg-accent transition-colors"
         >
-          Teklif al
+          Brief gönder
           <span aria-hidden>→</span>
         </a>
 
@@ -92,11 +93,11 @@ export function Header() {
               </a>
             ))}
             <a
-              href="#iletisim"
+              href="/brief"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center px-5 py-3 rounded-full bg-accent text-ink font-medium"
             >
-              Teklif al →
+              Brief gönder →
             </a>
           </div>
         </div>

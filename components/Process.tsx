@@ -51,8 +51,10 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="sureç" className="relative py-24 lg:py-36 bg-ink-2 border-y border-border overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-accent/5 blur-[140px] -z-0" />
+    <section id="sureç" className="relative py-24 lg:py-36 bg-ink-2 border-y border-border">
+      <div aria-hidden className="absolute inset-0 overflow-hidden pointer-events-none -z-0">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-accent/5 blur-[140px]" />
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-16 lg:mb-24">
