@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BriefForm } from "@/components/BriefForm";
 
 export const metadata: Metadata = {
-  title: "Brief Gönder — Atölye",
+  title: "Brief Gönder — Furnuovo",
   description:
     "Projenizi adım adım anlatın; 48 saat içinde ön çerçeve raporu ve takvim önerisiyle dönüyoruz."
 };

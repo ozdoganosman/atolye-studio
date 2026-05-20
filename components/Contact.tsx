@@ -42,8 +42,8 @@ export function Contact() {
                   E-posta & telefon
                 </p>
                 <p>
-                  <a className="hover:text-accent" href="mailto:hello@atolye.studio">
-                    hello@atolye.studio
+                  <a className="hover:text-accent" href="mailto:hello@furnuovo.com">
+                    hello@furnuovo.com
                   </a>
                   <br />
                   <a className="hover:text-accent" href="tel:+902120000000">

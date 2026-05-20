@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 const testimonials = [
   {
     quote:
-      "Markanın global standartlarını koruyacak ama hızlı kurulup açılacak bir mağazaya ihtiyacımız vardı. Atölye, 7 haftalık takvime tek günlük sapma olmadan teslim etti.",
+      "Markanın global standartlarını koruyacak ama hızlı kurulup açılacak bir mağazaya ihtiyacımız vardı. Furnuovo, 7 haftalık takvime tek günlük sapma olmadan teslim etti.",
     name: "B. K.",
     title: "Operasyon Müdürü",
     company: "Pierre Cardin Türkiye"

@@ -30,12 +30,12 @@ export function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center gap-2 group">
           <span className="relative flex items-center justify-center w-9 h-9 rounded-full bg-accent text-ink font-display font-semibold text-lg">
-            A
+            F
             <span className="absolute -right-0.5 -bottom-0.5 w-2 h-2 rounded-full bg-cream" />
           </span>
-          <span className="font-display text-xl tracking-tight">atölye</span>
+          <span className="font-display text-xl tracking-tight">furnuovo</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-8 text-sm text-cream/80">

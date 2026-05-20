@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Atölye — İç Mimari & Fuar Standı Tasarımı",
+  title: "Furnuovo — İç Mimari & Fuar Standı Tasarımı",
   description:
     "Konsept'ten teslimata; iç mimari uygulamaları ve fuar standı tasarımında uçtan uca üretim atölyesi.",
   metadataBase: new URL("https://example.com")

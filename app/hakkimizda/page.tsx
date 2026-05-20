@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hakkımızda — Atölye",
+  title: "Hakkımızda — Furnuovo",
   description:
     "İç mimari ve fuar standı projelerini konsept'ten teslime kendi atölyesinde üreten bir stüdyo. 2014'ten beri."
 };
@@ -25,7 +25,7 @@ const machines = [
 ];
 
 const timeline = [
-  { year: "2014", event: "Atölye kuruldu; 80 m² mağaza teşhir mobilyasıyla başlandı." },
+  { year: "2014", event: "Furnuovo kuruldu; 80 m² mağaza teşhir mobilyasıyla başlandı." },
   { year: "2017", event: "İlk uluslararası fuar projesi: Milano." },
   { year: "2019", event: "1.000 m² atölyeye taşınıldı; CNC lazer eklendi." },
   { year: "2022", event: "Endüstriyel mutfak hattı uzmanlığı portföye katıldı." },

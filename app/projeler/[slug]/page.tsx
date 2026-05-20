@@ -16,9 +16,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const p = getProject(slug);
-  if (!p) return { title: "Proje bulunamadı — Atölye" };
+  if (!p) return { title: "Proje bulunamadı — Furnuovo" };
   return {
-    title: `${p.title} — Atölye`,
+    title: `${p.title} — Furnuovo`,
     description: p.summary,
     openGraph: {
       title: p.title,
