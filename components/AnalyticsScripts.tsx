@@ -1,7 +1,7 @@
 import Script from "next/script";
 
 export function AnalyticsScripts() {
-  const clarityProjectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
+  const clarityProjectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID || "wurh6a4g7r";
   const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   return (
