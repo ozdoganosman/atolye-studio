@@ -3,12 +3,16 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { AnalyticsScripts } from "@/components/AnalyticsScripts";
 
 export const metadata: Metadata = {
   title: "Furnuovo — İç Mimari & Fuar Standı Tasarımı",
   description:
     "Konsept'ten teslimata; iç mimari uygulamaları ve fuar standı tasarımında uçtan uca üretim atölyesi.",
-  metadataBase: new URL("https://furnuovo.com")
+  metadataBase: new URL("https://furnuovo.com"),
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+  }
 };
 
 export default function RootLayout({
@@ -31,6 +35,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <AnalyticsScripts />
       </body>
     </html>
   );
