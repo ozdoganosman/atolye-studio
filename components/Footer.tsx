@@ -27,8 +27,8 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href="tel:+902120000000" className="hover:text-accent">
-                +90 212 000 00 00
+              <a href="tel:+905392920144" className="hover:text-accent">
+                +90 539 292 01 44
               </a>
             </li>
             <li className="text-muted">İstanbul, Türkiye</li>

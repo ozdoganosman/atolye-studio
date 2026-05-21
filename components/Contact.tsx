@@ -71,8 +71,8 @@ export function Contact() {
                     info@furnuovo.com
                   </a>
                   <br />
-                  <a className="hover:text-accent" href="tel:+902120000000">
-                    +90 212 000 00 00
+                  <a className="hover:text-accent" href="tel:+905392920144">
+                    +90 539 292 01 44
                   </a>
                 </p>
               </div>

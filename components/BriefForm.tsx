@@ -83,8 +83,8 @@ export function BriefForm() {
         <p className="text-cream/70 max-w-xl mx-auto leading-relaxed">
           En geç 48 saat içinde ön çerçeve raporu ve önerilen takvimle
           dönüyoruz. Acil iletişim için{" "}
-          <a className="text-accent hover:underline" href="tel:+902120000000">
-            +90 212 000 00 00
+          <a className="text-accent hover:underline" href="tel:+905392920144">
+            +90 539 292 01 44
           </a>{" "}
           numaralı hattımız aktif.
         </p>
