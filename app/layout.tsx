@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Furnuovo — İç Mimari & Fuar Standı Tasarımı",
   description:
     "Konsept'ten teslimata; iç mimari uygulamaları ve fuar standı tasarımında uçtan uca üretim atölyesi.",
-  metadataBase: new URL("https://example.com")
+  metadataBase: new URL("https://furnuovo.com")
 };
 
 export default function RootLayout({

@@ -39,11 +39,36 @@ export function BriefForm() {
   const [timeline, setTimeline] = useState("");
   const [state, setState] = useState("");
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setSubmitting(true);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+    formData.set("source", "brief");
+    formData.set("projectType", type);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        throw new Error(data?.error || "Brief gönderilemedi.");
+      }
+
+      setSent(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Brief gönderilemedi.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (sent) {
@@ -184,19 +209,23 @@ export function BriefForm() {
       </Section>
 
       <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-4 pt-4">
-        <p className="text-xs text-muted max-w-md">
-          Gönder'e basarak{" "}
-          <a className="underline hover:text-accent" href="#">
-            KVKK aydınlatma metnini
-          </a>{" "}
-          ve verilerinizin proje teklifi sürecinde kullanılmasını kabul etmiş
-          olursunuz.
-        </p>
+        <div className="text-xs text-muted max-w-md">
+          <p>
+            Gönder'e basarak{" "}
+            <a className="underline hover:text-accent" href="#">
+              KVKK aydınlatma metnini
+            </a>{" "}
+            ve verilerinizin proje teklifi sürecinde kullanılmasını kabul etmiş
+            olursunuz.
+          </p>
+          {error && <p className="mt-2 text-accent">{error}</p>}
+        </div>
         <button
           type="submit"
-          className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-accent text-ink font-medium hover:bg-accent-2 transition-colors text-base"
+          disabled={submitting}
+          className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-accent text-ink font-medium hover:bg-accent-2 transition-colors text-base disabled:cursor-not-allowed disabled:opacity-60"
         >
-          Brief'i gönder
+          {submitting ? "Gönderiliyor..." : "Brief'i gönder"}
           <span aria-hidden>→</span>
         </button>
       </div>

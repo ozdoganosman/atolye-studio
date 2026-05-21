@@ -8,10 +8,35 @@ const projectTypes = ["İç mimari uygulama", "Fuar standı", "3D görselleştir
 export function Contact() {
   const [type, setType] = useState(projectTypes[0]);
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
+    setSubmitting(true);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+    formData.set("source", "contact");
+    formData.set("projectType", type);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        throw new Error(data?.error || "Mesaj gönderilemedi.");
+      }
+
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Mesaj gönderilemedi.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -42,8 +67,8 @@ export function Contact() {
                   E-posta & telefon
                 </p>
                 <p>
-                  <a className="hover:text-accent" href="mailto:hello@furnuovo.com">
-                    hello@furnuovo.com
+                  <a className="hover:text-accent" href="mailto:info@furnuovo.com">
+                    info@furnuovo.com
                   </a>
                   <br />
                   <a className="hover:text-accent" href="tel:+902120000000">
@@ -121,18 +146,22 @@ export function Contact() {
                   </div>
 
                   <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <p className="text-xs text-muted">
-                      Gönder'e basarak{" "}
-                      <a className="underline hover:text-accent" href="#">
-                        KVKK metnini
-                      </a>{" "}
-                      kabul etmiş olursunuz.
-                    </p>
+                    <div className="text-xs text-muted">
+                      <p>
+                        Gönder'e basarak{" "}
+                        <a className="underline hover:text-accent" href="#">
+                          KVKK metnini
+                        </a>{" "}
+                        kabul etmiş olursunuz.
+                      </p>
+                      {error && <p className="mt-2 text-accent">{error}</p>}
+                    </div>
                     <button
                       type="submit"
-                      className="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full bg-accent text-ink font-medium hover:bg-accent-2 transition-colors"
+                      disabled={submitting}
+                      className="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full bg-accent text-ink font-medium hover:bg-accent-2 transition-colors disabled:cursor-not-allowed disabled:opacity-60"
                     >
-                      Brief'i gönder
+                      {submitting ? "Gönderiliyor..." : "Brief'i gönder"}
                       <span aria-hidden>→</span>
                     </button>
                   </div>
